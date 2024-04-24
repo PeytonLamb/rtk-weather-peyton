@@ -1,12 +1,22 @@
+import { fetchWeatherData } from '../redux/weatherService';
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
+import weatherConditions from './weatherConditions';
 
-const SearchInput = ({ city, onCityChange, onSearch, error }) => {
-  const handleChange = (event) => {
-    onCityChange(event.target.value);
-  };
 
-  const handleClick = () => {
-    onSearch();
+const SearchInput = () => {
+  const dispatch = useDispatch()
+  const [city, setCity] = useState('');
+  const [error, setError] = useState(null);
+  const handleSearch = () => {
+    if (!city.trim()) {
+      setError('Please enter a city name');
+      return;
+    }
+    dispatch(fetchWeatherData(city))
+    setCity('');
+    setError(null);
   };
 
   return (
@@ -14,10 +24,10 @@ const SearchInput = ({ city, onCityChange, onSearch, error }) => {
       <input
         type="text"
         value={city}
-        onChange={handleChange} 
+        onChange={(event) => setCity(event.target.value)}
         placeholder="Enter a city..."
       />
-      <button onClick={handleClick}>Search</button> {}
+      <button onClick={handleSearch}>Search</button> {}
       {error && <div>{error}</div>}
     </div>
   );

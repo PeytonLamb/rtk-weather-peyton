@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.2.3",
+    "bootstrap": "^5.3.3",
     "eslint-config-next": "13.5.3",
     "next": "^13.5.6",
     "react": "18.2.0",
@@ -22,5 +24,9 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0"
-  }
+  },
+  "description": "This project has been created by a student at Parsity, an online software engineering course. The work in this repository is wholly of the student based on a sample starter project that can be accessed by looking at the repository that this project forks.",
+  "main": "next.config.js",
+  "author": "",
+  "license": "ISC"
 }

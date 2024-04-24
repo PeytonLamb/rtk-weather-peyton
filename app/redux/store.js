@@ -1,11 +1,9 @@
-// store.js
-import { createStore, combineReducers } from 'redux';
-import weatherReducer from './weatherReducer';
+'use client'
+import rootReducer from "./rootReducer";
+import { configureStore } from '@reduxjs/toolkit'
 
+const store = configureStore({ 
+    reducer: rootReducer
+ })
 
-const rootReducer = weatherReducer;
-
-// Create your Redux store
-const store = createStore(rootReducer)
-
-export default store;
+ export default store
