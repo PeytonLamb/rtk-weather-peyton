@@ -15,7 +15,7 @@ return weatherStats
   
 }
 
-export const renderConditions = () => {
+export const RenderConditions = () => {
 const cities = useSelector((state) => { 
     state.weather.city
 })
